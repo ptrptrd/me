@@ -10,5 +10,9 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+
+  // Github Page 
+  site: 'https://ptrptrd.github.io',
+  base: 'me',
 });
