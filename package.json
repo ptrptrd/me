@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "tinacms dev -c \"astro dev\"",
-    "build": "astro build",
+    "build": "tinacms build && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -17,7 +17,8 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwindcss": "^4.0.17",
-    "tinacms": "^2.7.3"
+    "tinacms": "^2.7.3",
+    "tinacms-gitprovider-github": "^2.0.14"
   },
   "devDependencies": {
     "@tinacms/cli": "^1.9.3",
