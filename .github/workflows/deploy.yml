@@ -20,6 +20,9 @@ jobs:
         uses: actions/checkout@v4
         with:
             repository: ptrptrd/docs
+            path: ./docs
+      - name: Check folder structure
+        run: ls -la
       - name: Install, build, and upload your site
         uses: withastro/action@v3
 
