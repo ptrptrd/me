@@ -5,7 +5,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://ptrptrd.github.io',
-  	base: 'me',
+	site: 'https://ptrptrd.github.io/me',
 	integrations: [mdx(), sitemap()],
 });
