@@ -4,6 +4,8 @@ on:
   push:
     branches: [ pp/dev ]
   workflow_dispatch:
+  repository_dispatch:
+    types: [ rebuild ]
 
 permissions:
   contents: read
