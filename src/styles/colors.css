@@ -21,8 +21,8 @@
 
     /* UI COLOR */
     /* main */
-    --background        : '#18211F';
-    --foreground        : '#C5C8C6';
+    --background        : #18211f;
+    --foreground        : #C5C8C6;
 
     /* panel */
     --panel-main            : var(--background);

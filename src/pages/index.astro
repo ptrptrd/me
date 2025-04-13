@@ -11,11 +11,17 @@ import Navigation from '../components/Navigation.astro';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
-		<Header />
-		<main>
-			<Navigation />
+	<body class="h-screen w-screen">
+		<main class="
+			h-full w-full m-[0]
+			bg-(--panel-main) 
+			flex flex-col
+			items-center
+			justify-center">
+			<div class="w-1/2">
+				<!-- <Navigation /> -->
+				 <span class="text-(--panel-main-foreground)">Still on work :/</span>
+			</div>
 		</main>
-		<Footer />
 	</body>
 </html>

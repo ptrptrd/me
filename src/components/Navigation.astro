@@ -4,22 +4,9 @@ import HeaderLink from "./HeaderLink.astro";
 
 <nav>
     <div class="internal-links bg-opacity/95 text-primary relative flex h-full w-full items-center justify-between rounded-full p-5 shadow-md bg-[#000000e6]">
-        <HeaderLink href=`${import.meta.env.BASE_URL}/`>Home</HeaderLink>
-        <HeaderLink href=`${import.meta.env.BASE_URL}/blog`>Blog</HeaderLink>
-        <HeaderLink href=`${import.meta.env.BASE_URL}/about`>About</HeaderLink>
+        <div>
+            <HeaderLink href=`${import.meta.env.BASE_URL}/` class="text-[color:--foreground]">Home</HeaderLink>
+            <HeaderLink href=`${import.meta.env.BASE_URL}/blog`>Blog</HeaderLink>
+        </div>
     </div>
-
-    <ul
-        class="bg-opacity/95 text-primary relative flex h-full w-full items-center justify-between rounded-full bg-white p-5 shadow-md dark:bg-[#000000e6]"
-    >
-        <li>
-            <HeaderLink href=`${import.meta.env.BASE_URL}/`>Home</HeaderLink>
-        </li>
-        <li>
-            <HeaderLink href=`${import.meta.env.BASE_URL}/`>Home</HeaderLink>
-        </li>
-        <li>
-            <HeaderLink href=`${import.meta.env.BASE_URL}/`>Home</HeaderLink>
-        </li>
-    </ul>
 </nav>
