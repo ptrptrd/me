@@ -1,18 +1,19 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+import Search from "./Search.astro";
 import { Icon } from "astro-icon/components";
 ---
 
-<nav>
-    <div class="internal-links bg-opacity/95 text-primary relative flex h-full w-full items-center justify-between rounded-50px p-5 shadow-md bg-[#000000e6]">
-        <div>
-            <HeaderLink href=`${import.meta.env.BASE_URL}/` class="text-(--foreground)">
-                <Icon name="mdi:home" class="text-(--foreground)" href=`${import.meta.env.BASE_URL}/`/>
-            </HeaderLink>
-            <HeaderLink href=`${import.meta.env.BASE_URL}/blog`>
-                <Icon name="mdi:tag" class="text-(--foreground)"/>
-            </HeaderLink>
-            <Icon name="mdi:search" class="text-(--foreground)"/>
-        </div>
-    </div>
+<nav class="h-full bg-[var(--bar-main)] shadow-md rounded-[5px] p-[5px]">
+	<div class="text-primary h-full w-full items-center justify-between">
+		<div class="h-full w-full flex flex-row justify-between">
+			<HeaderLink href=`${import.meta.env.BASE_URL}/` class="flex-none">
+				<Icon name="mdi:home" class="text-(--foreground) text-2xl"/>
+			</HeaderLink>
+			<HeaderLink href=`${import.meta.env.BASE_URL}/blog` class="flex-none">
+					<Icon name="mdi:tag" class="text-(--foreground) text-xl"/>
+			</HeaderLink>
+			<Search />
+		</div>
+	</div>
 </nav>

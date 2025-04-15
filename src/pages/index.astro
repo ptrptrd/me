@@ -6,10 +6,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import Navigation from '../components/Navigation.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import Search from '../components/Search.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+).slice(0, 5);
+
+const postsCount = posts.length > 5 ? 5 : posts.length;
 ---
 
 <!doctype html>
@@ -24,18 +27,23 @@ const posts = (await getCollection('blog')).sort(
 			flex flex-col
 			items-center
 			justify-center">
-			<div class="w-1/2">
-				<Navigation />
+			<div class="w-1/2 h-1/20 bg-[var(--bar-main)] p-[5px]">
+				<Search />
 			</div>
-			<ul>
+			<ul class=`w-1/2 max-h-1/2 min-h-[${postsCount * 32}px] p-[3px]`>
 				{
 					posts.map((post) => (
-						<li>
-							<a href={`${import.meta.env.BASE_URL}/blog/${post.id}/`}>
-								<h4 class="title">{post.data.title}</h4>
-								<p class="date">
-									<FormattedDate date={post.data.pubDate} />
-								</p>
+						<li class="h-1/14 min-h-[32px]">
+							<a href={`${import.meta.env.BASE_URL}/blog/${post.id}/`} class="h-full">
+								<div class="flex h-full">
+									<h4 class="title flex-none text-(--panel-main-foreground) self-end">{post.data.title}</h4>
+									<div class="h-full flex-auto mx-[10px] py-[5px] flex">
+										<hr class="text-(--panel-main-foreground) flex-auto self-end">
+									</div>
+									<p class="date text-(--panel-main-foreground) self-end">
+										<FormattedDate date={post.data.pubDate} />
+									</p>
+								</div>
 							</a>
 						</li>
 					))
