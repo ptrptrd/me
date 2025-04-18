@@ -4,6 +4,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import Search from '../components/Search.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -54,13 +55,19 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		</style>
 	</head>
 
-	<body>
-		<Header />
+	<body class="h-screen w-screen">
+		<div class="h-24 w-full m-[0]
+			bg-(--panel-main) 
+			flex items-center justify-center">
+			<div class="w-1/2 max-w-[700px] h-1/2 p-[5px] bg-(--bar-main) shadow-md rounded-[5px] p-[5px] flex flex-col justify-center">
+				<Search />
+			</div>
+		</div>
 		<main>
 			<article>
-				<div class="hero-image">
+				<!-- <div class="hero-image">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-				</div>
+				</div> -->
 				<div class="prose">
 					<div class="title">
 						<div class="date">
