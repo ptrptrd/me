@@ -7,6 +7,21 @@
 @import 'tailwindcss';
 @import './colors.css';
 
+@layer base {
+	@font-face {
+		font-family: 'DejaVu';
+		src: url('/fonts/dejavu-mono.ttf') format('ttf');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+}
+
+body {
+	font-family: 'DejaVu', sans-serif;
+	font-size: 18px;
+}
+
 /* :root {
 	--accent: #2337ff;
 	--accent-dark: #000d8a;
