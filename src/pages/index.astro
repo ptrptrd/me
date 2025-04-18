@@ -27,10 +27,10 @@ const postsCount = posts.length > 5 ? 5 : posts.length;
 			flex flex-col
 			items-center
 			justify-center">
-			<div class="w-1/2 h-1/20 p-[5px] bg-(--bar-main) shadow-md rounded-[5px] p-[5px] flex items-center">
+			<div class="w-1/2 max-w-[700px] h-1/20 p-[5px] bg-(--bar-main) shadow-md rounded-[5px] p-[5px] flex items-center">
 				<Search />
 			</div>
-			<ul class=`w-1/2 max-h-1/2 min-h-[${postsCount * 32}px] p-[3px]`>
+			<ul class=`w-1/2 max-w-[700px] max-h-1/2 min-h-[${postsCount * 32}px] p-[3px]`>
 				{
 					posts.map((post) => (
 						<li class="h-1/14 min-h-[32px]">
