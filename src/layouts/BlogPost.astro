@@ -4,7 +4,8 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-import Search from '../components/Search.astro';
+import HeaderSearch from '../components/HeaderSearch.astro';
+import { Icon } from "astro-icon/components";
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -20,34 +21,27 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				max-width: 100%;
 				margin: 0;
 			} */
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
 			.prose {
 				width: 720px;
 				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
+				margin-left: auto;
+				margin-right: auto;
 			}
 			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
+				padding: 10px 0;
+				margin-bottom: 20px;
 				text-align: center;
-				line-height: 1;
+				font-size: xx-large;
+				justify-self: baseline;
 			}
 			.title h1 {
-				margin: 0 0 0.5em 0;
+				margin: 0 0 0 0;
 			}
 			.date {
 				margin-bottom: 0.5em;
 				color: rgb(var(--gray));
+				justify-self: baseline;
+				font-size: small;
 			}
 			.last-updated-on {
 				font-style: italic;
@@ -55,21 +49,26 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		</style>
 	</head>
 
-	<body class="h-screen w-screen">
-		<div class="h-24 w-full m-[0]
+	<body class="h-screen w-full flex flex-col">
+		<div class="h-18 m-[0] px-[10px]
 			bg-(--panel-main) 
-			flex items-center justify-center">
-			<div class="w-1/2 max-w-[700px] h-1/2 p-[5px] bg-(--bar-main) shadow-md rounded-[5px] p-[5px] flex flex-col justify-center">
-				<Search />
+			shrink-0 flex items-center justify-center">
+			<Icon name="mdi:folder" id="search-close" class="text-(--foreground) text-2xl mx-[5px]"/> 
+			<div class="h-1/2 w-full items-center flex flex-col justify-center justify-center">
+				<div class="w-1/2 max-w-[700px] p-[5px] bg-(--bar-main) shadow-md rounded-[5px] p-[5px]">
+					<HeaderSearch />
+				</div>
 			</div>
+			<Icon name="mdi:menu" id="search-close" class="text-(--foreground) text-2xl mx-[5px]"/> 
 		</div>
-		<main class="w-full bg-(--bar-main) ">
-			<article class="w-full text-(--bar-main-foreground)">
+		<main class="w-full bg-(--panel-main) flex-1">
+			<article class="text-(--bar-main-foreground)">
 				<!-- <div class="hero-image">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 				</div> -->
 				<div class="prose">
 					<div class="title">
+						<h1>{title}</h1>
 						<div class="date">
 							<FormattedDate date={pubDate} />
 							{
@@ -80,8 +79,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 								)
 							}
 						</div>
-						<h1>{title}</h1>
-						<hr />
 					</div>
 					<slot />
 				</div>

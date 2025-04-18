@@ -1,0 +1,25 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div id="search" class="w-full min-w-[200px] flex">    
+	<Icon name="mdi:search" class="text-(--foreground) text-2xl mx-[5px]"/>      
+	<input type="text" id="search-input" class="flex-auto border-transparent focus:outline-none text-(--foreground)" placeholder="Still in work :/ ..." />
+	<Icon name="mdi:close" id="search-close" class="hidden text-(--foreground) text-2xl mx-[5px]"/>  
+	<Icon name="mdi:tags" class="text-(--foreground) text-2xl mx-[5px]"/>   
+	<Icon name="mdi:filter-variant" class="text-(--foreground) text-2xl mx-[5px]"/>    
+	<Icon name="mdi:folder-outline" class="text-(--foreground) text-2xl mx-[5px]"/>   
+</div>
+
+<script >
+  const input = document.getElementById('search-input');
+  const button = document.getElementById('search-close');
+
+  input.addEventListener('input', () => {
+    if (input.value !== '') {
+      button.style.display = 'inline-block';
+    } else {
+      button.style.display = 'none';
+    }
+  });
+</script>

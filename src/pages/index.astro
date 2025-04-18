@@ -6,7 +6,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import Navigation from '../components/Navigation.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-import Search from '../components/Search.astro';
+import HomeSearch from '../components/HomeSearch.astro';
+import { Icon } from "astro-icon/components";
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -28,7 +29,7 @@ const postsCount = posts.length > 5 ? 5 : posts.length;
 			items-center
 			justify-center">
 			<div class="w-1/2 max-w-[700px] h-1/20 p-[5px] bg-(--bar-main) shadow-md rounded-[5px] p-[5px] flex items-center">
-				<Search />
+				<HomeSearch />
 			</div>
 			<ul class=`w-1/2 max-w-[700px] max-h-1/2 min-h-[${postsCount * 32}px] p-[3px]`>
 				{
