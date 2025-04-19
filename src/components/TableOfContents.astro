@@ -11,13 +11,15 @@ const { headings } = Astro.props;
 
 const filteredHeadings = headings.filter((heading) => heading.depth == 2);
 ---
-<nav id="table-of-contents" class="px-[10px]">
+<nav id="table-of-contents" class="w-full px-[10px]">
   <h2>Table of Contents</h2>
-  <ul class="">
+  <ul class="w-full">
     {
       filteredHeadings.map((heading) => (
-				<li>
-					<b><a href={`#${heading.slug}`}>{heading.text}</a></b>
+				<li class="w-full">
+					<b><a href={`#${heading.slug}`} class="w-full">
+						<span class="wrap-normal">
+						{heading.text}</span></a></b>
 				</li>
       ))
     }

@@ -10,6 +10,8 @@ import HeaderSearch from '../components/HeaderSearch.astro';
 import { Icon } from "astro-icon/components";
 import type { MarkdownHeading } from 'astro';
 import TableOfContents from '../components/TableOfContents.astro';
+import { getDirectoryTree } from './blog.ts';
+const tree = getDirectoryTree('src/content/blog');
 
 type Props = CollectionEntry<'blog'>['data'] & { headings: MarkdownHeading[] };;
 
@@ -57,9 +59,26 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 			</div>
 		</div>
 		<main class="w-full bg-(--panel-main) flex-1 flex justify-center">
-			<div id="blog-toc" class="w-[300px] sticky top-20 text-(--foreground) mr-[50px]">
-				<div class="hidden px-[10px]">
-					<TableOfContents headings={ headings }/>
+			<div id="blog-toc" class="w-[300px] text-(--foreground) mr-[50px] flex-none">
+				<div class="w-[300px] fixed ">
+					<h1>📁 Blog Directory Structure</h1>
+
+					<ul>
+						{tree.map((node) => (
+							<li>
+								{node.type === 'directory' ? `📂 ${node.name}` : `📄 ${node.name}`}
+								{node.children && (
+									<ul>
+										{node.children.map((child) => (
+											<li>
+												{child.type === 'directory' ? `📂 ${child.name}` : `📄 ${child.name}`}
+											</li>
+										))}
+									</ul>
+								)}
+							</li>
+						))}
+					</ul>
 				</div>
 			</div>
 			<article class="text-(--bar-main-foreground)">
@@ -85,8 +104,10 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 					</div>
 				</div>
 			</article>
-			<div id="blog-toc" class="w-[300px] sticky top-20 text-(--foreground) ml-[50px]">
-				<TableOfContents headings={ headings } />
+			<div id="blog-toc" class="w-[300px] text-(--foreground) ml-[50px] flex-none">
+				<div class="w-[300px] fixed ">
+					<TableOfContents headings={ headings } />
+				</div>
 			</div>
 		</main>
 		<Footer />
