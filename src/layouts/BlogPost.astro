@@ -20,16 +20,9 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
-			/* main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			} */
 			.prose {
 				width: 720px;
 				max-width: calc(100% - 2em);
-				margin-left: auto;
-				margin-right: auto;
 			}
 			.title {
 				padding: 10px 0;
@@ -63,7 +56,12 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 				</div>
 			</div>
 		</div>
-		<main class="w-full bg-(--panel-main) flex-1">
+		<main class="w-full bg-(--panel-main) flex-1 flex justify-center">
+			<div id="blog-toc" class="w-[300px] sticky top-20 text-(--foreground) mr-[50px]">
+				<div class="hidden px-[10px]">
+					<TableOfContents headings={ headings }/>
+				</div>
+			</div>
 			<article class="text-(--bar-main-foreground)">
 				<!-- <div class="hero-image">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
@@ -82,14 +80,14 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 							}
 						</div>
 					</div>
-					<div id="blog-toc">
-						<TableOfContents headings={ headings } />
-					</div>
 					<div id="blog-content">
 						<slot />
 					</div>
 				</div>
 			</article>
+			<div id="blog-toc" class="w-[300px] sticky top-20 text-(--foreground) ml-[50px]">
+				<TableOfContents headings={ headings } />
+			</div>
 		</main>
 		<Footer />
 	</body>
