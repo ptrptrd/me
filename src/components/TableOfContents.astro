@@ -1,0 +1,25 @@
+---
+import './tableofcontents.css';
+
+import type { MarkdownHeading } from 'astro';
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+
+const filteredHeadings = headings.filter((heading) => heading.depth == 2);
+---
+<nav id="table-of-contents">
+  <h2>Table of Contents</h2>
+  <ul>
+    {
+      filteredHeadings.map((heading) => (
+				<li>
+					<b><a href={`#${heading.slug}`}>{heading.text}</a></b>
+				</li>
+      ))
+    }
+  </ul>
+</nav>
