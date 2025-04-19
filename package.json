@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.2.3",
-    "@iconify/tailwind4": "^1.0.6"
+    "@iconify/tailwind4": "^1.0.6",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
