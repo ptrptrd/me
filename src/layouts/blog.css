@@ -1,78 +1,136 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
+#blog-content {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin: 0 0 25px 0;
+		color: rgb(var(--black));
+		line-height: 1.2;
+	}
+
+	h1 {
+		font-size: 45px;
+		border-bottom: 3px solid var(--magenta)
+	}
+
+	h2 {
+		font-size: 40px;
+		border-bottom: 1px solid var(--magenta)
+	}
+
+	h3 {
+		font-size: 35px;
+		border-bottom: 1px dashed var(--magenta)
+	}
+
+	h4 {
+		font-size: 30px;
+	}
+
+	h5 {
+		font-size: 25px;
+	}
+
+	h6 {
+		font-size: 20px;
+	}
+
+	strong,
+	b {
+		font-weight: 700;
+	}
+
+	a {
+		color: var(--blue);
+	}
+
+	a:hover {
+		color: var(--blue-bright);
+	}
+
+	p {
+		font-size: calc(var(--text-base) + 2px);
+		margin-bottom: 15px;
+	}
+
+	mark {
+		background-color: var(--yellow-bright);
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		margin-bottom: 1em;
+	}
+
+	th,
+	td {
+		border: 2px solid var(--blue);
+		padding: 0.6em 1em;
+	}
+
+	ul {
+		list-style-type: disc;
+		padding-left: 2em;
+		margin-bottom: 1em;
+	}
+
+	ol {
+		list-style-type: decimal;
+		padding-left: 2em;
+		margin-bottom: 1em;
+	}
+
+	th {
+		font-weight: 600;
+	}
+
+	textarea {
+		width: 100%;
+		font-size: 16px;
+	}
+	input {
+		font-size: 16px;
+	}
+	table {
+		width: 100%;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+		border-radius: 8px;
+	}
+
+	code {
+		padding: 2px 5px;
+		background-color: rgb(var(--blue));
+		border-radius: 2px;
+	}
+
+	pre {
+		padding: 10px;
+		border-radius: 8px;
+		margin-bottom: 25px;
+	}
+
+	pre > code {
+		all: unset;
+	}
+
+	blockquote {
+		border-left: 4px solid var(--green);
+		padding: 0 0 0 20px;
+		margin: 0px;
+		font-size: 1.333em;
+	}
+
+	hr {
+		border: 0;
+		border-top: 1px solid var(--green);
+		margin: 2em 0;
+	}
+
 }
-h1 {
-	font-size: 3.052em;
-}
-h2 {
-	font-size: 2.441em;
-}
-h3 {
-	font-size: 1.953em;
-}
-h4 {
-	font-size: 1.563em;
-}
-h5 {
-	font-size: 1.25em;
-}
-strong,
-b {
-	font-weight: 700;
-}
-a {
-	color: var(--accent);
-}
-a:hover {
-	color: var(--accent);
-}
-p {
-	margin-bottom: 1em;
-}
-.prose p {
-	margin-bottom: 2em;
-}
-textarea {
-	width: 100%;
-	font-size: 16px;
-}
-input {
-	font-size: 16px;
-}
-table {
-	width: 100%;
-}
-img {
-	max-width: 100%;
-	height: auto;
-	border-radius: 8px;
-}
-code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
-}
-pre {
-	padding: 1.5em;
-	border-radius: 8px;
-}
-pre > code {
-	all: unset;
-}
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0px;
-	font-size: 1.333em;
-}
-hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
-}
+
