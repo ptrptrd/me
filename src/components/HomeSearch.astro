@@ -23,3 +23,12 @@ import { Icon } from "astro-icon/components";
     }
   });
 </script>
+
+<script is:inline type="module">
+
+	const pagefind = await import("/me/pagefind/pagefind.js");
+	pagefind.init(); 
+
+	const result = pagefind.search("mdx")
+	console.log(await result);
+</script>
