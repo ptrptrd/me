@@ -49,3 +49,9 @@ const { title, description } = Astro.props;
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
+
+<!-- Pagefind -->
+<script is:inline type="module">
+	const pagefind = await import(`/me/pagefind/pagefind.js`);
+	window.pagefind = pagefind;
+</script>
