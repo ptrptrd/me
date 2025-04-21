@@ -25,10 +25,18 @@ import { Icon } from "astro-icon/components";
 </script>
 
 <script is:inline type="module">
-
 	const pagefind = await import("/me/pagefind/pagefind.js");
-	pagefind.init(); 
 
-	const result = pagefind.search("mdx")
-	console.log(await result);
+	const input = document.getElementById('search-input');
+
+	input.addEventListener('input', async(event) => {
+		console.log(event.data);
+		const search = await pagefind.debouncedSearch(event.data);
+		
+		if (search !== null){
+			console.log(search);
+			console.log(await search.results[0].data())
+			console.log(await search.results[1].data())
+		}
+	})
 </script>
