@@ -21,8 +21,9 @@ function Search(props){
 
 	return (
 		<>
-			<div className="relative">
-				<div className="w-1/3 bg-(--bar-main) shadow-md rounded-[5px] p-[5px] sticky flex items-center">
+		<div className="w-full h-full">
+			<div className="relative w-full h-full">
+				<div className="w-full h-full bg-(--bar-main) shadow-md rounded-[5px] p-[5px] sticky flex items-center">
 					<div>{props.iconSearch}</div>
 					<input 
 						type="text" 
@@ -38,6 +39,7 @@ function Search(props){
 					<div>{props.btnMenu}</div>
 				</div>
 				{ searchResults.length > 0 && <SearchOutput results={searchResults} />}
+			</div>
 			</div>
 		</>
 	)
