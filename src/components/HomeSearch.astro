@@ -2,13 +2,11 @@
 import { Icon } from "astro-icon/components";
 import Search from "./Search";
 ---
-
-<div id="search" class="w-full min-w-[200px] flex">    
-	<Search id="search-component" client:load>
-		<Icon slot="iconSearch" name="mdi:search" class="text-(--foreground) text-2xl mx-[5px]"/>      
-		<Icon slot="buttonClose" name="mdi:close" id="search-close" class="text-(--foreground) text-2xl mx-[5px]"/>  
-		<Icon slot="btn-tags" name="mdi:tags" class="text-(--foreground) text-2xl mx-[5px]"/>   
-		<Icon slot="btn-filter" name="mdi:filter-variant" class="text-(--foreground) text-2xl mx-[5px]"/>    
-		<Icon slot="btn-folder"name="mdi:folder-outline" class="text-(--foreground) text-2xl mx-[5px]"/>  
-	</Search>
-</div>
+   
+<Search id="search-component" client:load>
+	<Icon slot="iconSearch" name="mdi:search" class="text-(--foreground) text-2xl mx-[5px]"/>      
+	<Icon slot="btnClose" name="mdi:close" id="search-close" class="text-(--foreground) text-2xl mx-[5px]"/>  
+	<Icon slot="btnTags" name="mdi:tags" class="text-(--foreground) text-2xl mx-[5px]"/>   
+	<Icon slot="btnFilter" name="mdi:filter-variant" class="text-(--foreground) text-2xl mx-[5px]"/>    
+	<Icon slot="btnFolder"name="mdi:folder-outline" class="text-(--foreground) text-2xl mx-[5px]"/>  
+</Search>
