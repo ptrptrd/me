@@ -21,3 +21,40 @@ body {
 	font-family: 'DejaVu', sans-serif;
 	font-size: 18px;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: 45px;
+	border-bottom: 3px solid var(--magenta)
+}
+
+h2 {
+	font-size: 40px;
+	border-bottom: 1px solid var(--magenta)
+}
+
+h3 {
+	font-size: 35px;
+	border-bottom: 1px dashed var(--magenta)
+}
+
+h4 {
+	font-size: 30px;
+}
+
+h5 {
+	font-size: 25px;
+}
+
+h6 {
+	font-size: 20px;
+}
