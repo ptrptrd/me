@@ -41,6 +41,6 @@
 
     /* input */
     --input-main            : var(--cyan-bright);
-    --input-main-border     : var(--white-bright);
-    --input-main-foreground : var(--white-bright);
+    --input-main-border     : var(--black);
+    --input-main-foreground : var(--black);
 }
