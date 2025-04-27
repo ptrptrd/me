@@ -1,0 +1,18 @@
+#search-output{
+	h1,
+	h2,
+
+	p {
+		line-height: 1.2;
+	}
+
+	h1 {
+		font-size: 25px;
+		/* border-bottom: 3px solid var(--magenta) */
+	}
+
+	h2 {
+		font-size: 20px;
+		/* border-bottom: 1px solid var(--magenta) */
+	}
+}
