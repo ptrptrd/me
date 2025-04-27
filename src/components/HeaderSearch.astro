@@ -1,26 +1,13 @@
 ---
 import { Icon } from "astro-icon/components";
+import Search from "./Search";
 ---
-
-<div id="search" class="w-full min-w-[200px] flex">    
-	<Icon name="mdi:search" class="text-(--foreground) text-2xl mx-[5px]"/>      
-	<input type="text" id="search-input" class="flex-auto border-transparent focus:outline-none text-(--foreground)" placeholder="Still in work :/ ..." />
-	<Icon name="mdi:close" id="search-close" class="hidden text-(--foreground) text-2xl mx-[5px]"/>  
-	<Icon name="mdi:tags" class="text-(--foreground) text-2xl mx-[5px]"/>   
-	<Icon name="mdi:filter-variant" class="text-(--foreground) text-2xl mx-[5px]"/>    
-	<Icon name="mdi:folder-outline" class="text-(--foreground) text-2xl mx-[5px]"/>    
-	<Icon name="mdi:table-of-contents" class="text-(--foreground) text-2xl mx-[5px]"/>  
-</div>
-
-<script >
-  const input = document.getElementById('search-input');
-  const button = document.getElementById('search-close');
-
-  input.addEventListener('input', () => {
-    if (input.value !== '') {
-      button.style.display = 'inline-block';
-    } else {
-      button.style.display = 'none';
-    }
-  });
-</script>
+   
+<Search id="search-component" client:load>
+	<Icon slot="iconSearch" name="mdi:search" class="text-(--foreground) text-2xl mx-[5px]"/>      
+	<Icon slot="btnClose" name="mdi:close" id="search-close" class="text-(--foreground) text-2xl mx-[5px]"/>  
+	<Icon slot="btnTags" name="mdi:tags" class="text-(--foreground) text-2xl mx-[5px]"/>   
+	<Icon slot="btnFilter" name="mdi:filter-variant" class="text-(--foreground) text-2xl mx-[5px]"/>    
+	<Icon slot="btnFolder"name="mdi:folder-outline" class="text-(--foreground) text-2xl mx-[5px]"/>  
+	<Icon slot="btnMenu" name="mdi:more-vert" class="text-(--foreground) text-2xl mx-[5px]"/>  
+</Search>
