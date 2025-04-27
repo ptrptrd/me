@@ -49,7 +49,7 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 	</head>
 
 	<body class="h-screen w-full flex flex-col">
-		<div class="h-18 m-[0] px-[10px] fixed w-full
+		<!-- <div class="h-18 m-[0] px-[10px] fixed w-full
 			bg-(--panel-main) 
 			shrink-0 flex items-center justify-center">
 			<div class="h-1/2 w-full items-center flex flex-col justify-center justify-center">
@@ -57,9 +57,9 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 					<HeaderSearch />
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<main class="w-full bg-(--panel-main) flex-1 flex justify-center">
-			<div id="blog-toc" class="w-[300px] text-(--foreground) mt-[80px] mr-[50px] flex-none">
+			<!-- <div id="blog-toc" class="w-[300px] text-(--foreground) mt-[80px] mr-[50px] flex-none">
 				<div class="w-[300px] fixed ">
 					<h1>📁 Blog Directory Structure</h1>
 
@@ -80,8 +80,8 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 						))}
 					</ul>
 				</div>
-			</div>
-			<article class="text-(--bar-main-foreground) mt-[80px]">
+			</div> -->
+			<article class="text-(--bar-main-foreground) mt-[80px]" data-pagefind-body>
 				<!-- <div class="hero-image">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 				</div> -->
@@ -104,11 +104,11 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 					</div>
 				</div>
 			</article>
-			<div id="blog-toc" class="w-[300px] mt-[80px] text-(--foreground) ml-[50px] flex-none">
+			<!-- <div id="blog-toc" class="w-[300px] mt-[80px] text-(--foreground) ml-[50px] flex-none">
 				<div class="w-[300px] fixed ">
 					<TableOfContents headings={ headings } />
 				</div>
-			</div>
+			</div> -->
 		</main>
 		<Footer />
 	</body>

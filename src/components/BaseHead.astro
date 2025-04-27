@@ -53,5 +53,9 @@ const { title, description } = Astro.props;
 <!-- Pagefind -->
 <script is:inline type="module">
 	const pagefind = await import(`/me/pagefind/pagefind.js`);
+	pagefind.init();
+	await pagefind.options({
+		highlightParam: ""
+	});
 	window.pagefind = pagefind;
 </script>

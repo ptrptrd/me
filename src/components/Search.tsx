@@ -10,7 +10,7 @@ function Search(props){
 		
 		if (search !== null){
 			const allResults = await Promise.all(
-				search.results.slice(0, search.results.length - 1).map(r => r.data()));
+				search.results.slice(0, search.results.length).map(r => r.data()));
 			setSearchResults(allResults);
 		}
 	}
