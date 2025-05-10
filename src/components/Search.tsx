@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import SearchOutput from "./SearchOutput";
+import { clsx } from "clsx";
 
 function Search(props){
 	const [searchStr, setSearchStr] = useState("");
@@ -23,7 +24,13 @@ function Search(props){
 		<>
 		<div className="w-full h-full">
 			<div className="relative w-full h-full">
-				<div className="w-full h-full bg-(--bar-main) shadow-md rounded-[5px] p-[5px] sticky flex items-center">
+				<div className={clsx(
+					"w-full h-full",
+					"bg-(--bar-main)", 
+					"shadow-md",
+					"rounded-[5px] p-[5px]", 
+					"sticky flex items-center"
+				)}>
 					<div className="flex-none">{props.iconSearch}</div>
 					<input 
 						type="text" 
