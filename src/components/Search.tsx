@@ -24,19 +24,19 @@ function Search(props){
 		<div className="w-full h-full">
 			<div className="relative w-full h-full">
 				<div className="w-full h-full bg-(--bar-main) shadow-md rounded-[5px] p-[5px] sticky flex items-center">
-					<div>{props.iconSearch}</div>
+					<div className="flex-none">{props.iconSearch}</div>
 					<input 
 						type="text" 
 						id="search-input" 
 						value={searchStr} 
 						onChange={(e) => {setSearchStr(e.target.value)}} 
-						className="flex-auto border-transparent focus:outline-none text-(--foreground)" 
+						className="w-[90px] flex-auto border-transparent focus:outline-none text-(--foreground)" 
 						placeholder="Still in work :/ ..." />
 					<div onClick={() => {setSearchStr("")}} hidden={searchStr === ""}>{props.btnClose}</div>
-					<div>{props.btnTags}</div>
-					<div>{props.btnFilter}</div>
-					<div>{props.btnFolder}</div>
-					<div>{props.btnMenu}</div>
+					<div className="flex-none">{props.btnTags}</div>
+					<div className="flex-none">{props.btnFilter}</div>
+					<div className="flex-none">{props.btnFolder}</div>
+					<div className="flex-none">{props.btnMenu}</div>
 				</div>
 				{ searchResults.length > 0 && <SearchOutput results={searchResults} />}
 			</div>

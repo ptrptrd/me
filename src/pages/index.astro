@@ -5,13 +5,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import HomeSearch from '../components/HomeSearch.astro';
-import { clsx } from "clsx";
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 ).slice(0, 5);
 
-const postsCount = posts.length > 5 ? 5 : posts.length;
+// const postsCount = posts.length > 5 ? 5 : posts.length;
 ---
 
 <!doctype html>
@@ -24,20 +23,19 @@ const postsCount = posts.length > 5 ? 5 : posts.length;
 		"flex flex-col"]}>
 		<main class:list={[
 			"w-full",
-			"m-[0]",
-			"bg-(--panel-main)", 
 			"flex-auto",
 			"flex flex-col",
 			"items-center",
-			"justify-center",]}>
+			"justify-center",
+			"bg-(--panel-main)", ]}>
 			<div class:list={[
-				"w-1/2 max-w-[700px]",
-				"h-1/20"]}>
+				"w-1/2 min-w-[360px] max-w-[700px]",
+				"h-1/20 min-h-[60px]"]}>
 				<HomeSearch />
 			</div>
 			<ul class:list={[
-				"w-1/2 max-w-[700px]",
-				`max-h-1/2 min-h-[${postsCount * 32}px]`,
+				"w-1/2 min-w-[360px] max-w-[700px]",
+				`h-[${5 * 32}px]`,
 				"p-[3px]"]}>
 				{
 					posts.map((post) => (
