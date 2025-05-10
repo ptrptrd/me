@@ -5,6 +5,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import HomeSearch from '../components/HomeSearch.astro';
+import { clsx } from "clsx";
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -18,27 +19,48 @@ const postsCount = posts.length > 5 ? 5 : posts.length;
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="h-screen w-screen flex flex-col">
-		<main class="
-			w-full m-[0]
-			bg-(--panel-main) flex-auto
-			flex flex-col
-			items-center
-			justify-center">
-			<div class="w-1/2 max-w-[700px] h-1/20">
+	<body class:list={[
+		"h-screen w-screen",
+		"flex flex-col"]}>
+		<main class:list={[
+			"w-full",
+			"m-[0]",
+			"bg-(--panel-main)", 
+			"flex-auto",
+			"flex flex-col",
+			"items-center",
+			"justify-center",]}>
+			<div class:list={[
+				"w-1/2 max-w-[700px]",
+				" h-1/20"]}>
 				<HomeSearch />
 			</div>
-			<ul class=`w-1/2 max-w-[700px] max-h-1/2 min-h-[${postsCount * 32}px] p-[3px]`>
+			<ul class:list={[
+				"w-1/2 max-w-[700px]",
+				`max-h-1/2 min-h-[${postsCount * 32}px]`,
+				"p-[3px]"]}>
 				{
 					posts.map((post) => (
-						<li class="h-1/14 min-h-[32px]">
+						<li class:list={["h-1/14", "min-h-[32px]"]}>
 							<a href={`${import.meta.env.BASE_URL}/blog/${post.id}/`} class="h-full">
 								<div class="flex h-full">
-									<h6 class="title flex-none text-(--panel-main-foreground) self-end">{post.data.title}</h6>
-									<div class="h-full flex-auto mx-[10px] py-[5px] flex">
-										<hr class="text-(--panel-main-foreground) flex-auto self-end">
+									<h6 class:list={[
+										"flex-none  self-end", 
+										"text-(--panel-main-foreground)"]}>
+										{post.data.title}
+									</h6>
+									<div class:list={[
+										"h-full", 
+										"flex flex-auto",
+										"mx-[10px] py-[5px]",]}>
+										<hr class:list={[
+											"flex-auto self-end", 
+											"text-(--panel-main-foreground)"]}>
 									</div>
-									<p class="date text-(--panel-main-foreground) self-end">
+									<p class:list={[
+										"self-end", 
+										"text-(--panel-main-foreground)",
+										"date"]}>
 										<FormattedDate date={post.data.pubDate} />
 									</p>
 								</div>
