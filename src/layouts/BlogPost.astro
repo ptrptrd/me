@@ -95,7 +95,7 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 				</div> -->
 				<div class="prose">
-					<div class="title">
+					<div class:list={["title", "mb-[25px]"]}>
 						<p class:list={["text-[30px]"]}>{title}</p>
 						<div class="date">
 							<FormattedDate date={pubDate} />
