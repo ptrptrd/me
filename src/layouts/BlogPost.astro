@@ -19,7 +19,7 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
-			.prose {
+			/* .prose {
 				width: 720px;
 				max-width: calc(100% - 2em);
 			}
@@ -41,21 +41,29 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 			}
 			.last-updated-on {
 				font-style: italic;
-			}
+			} */
 		</style>
 	</head>
 
-	<body class="h-screen w-full flex flex-col">
-		<div class="h-24 m-[0] px-[10px] fixed w-full
-			bg-(--panel-main) 
-			shrink-0 flex items-center justify-center">
-			<div class="h-1/2 w-full items-center flex flex-col justify-center justify-center">
-				<div class="w-1/2 max-w-[700px] h-full">
-					<HeaderSearch />
-				</div>
+	<body class="h-full w-full flex flex-col">
+		<div class:list={[
+			"w-screen",
+			"fixed",
+			"flex flex-col",
+			"items-center",
+			"justify-center",
+			"bg-(--panel-main)", 
+			"shadow-xl"]}>
+			<div class:list={[
+				"w-1/2 min-w-[360px] max-w-[700px]",
+				"h-1/20 min-h-[60px]", 
+				"flex flex-auto flex-col justify-center",
+				"items-center", 
+				]}>
+				<HeaderSearch />
 			</div>
 		</div>
-		<main class="w-full bg-(--panel-main) flex-1 flex justify-center">
+		<main class="bg-(--panel-main) flex-1 justify-center">
 			<!-- <div id="blog-toc" class="w-[300px] text-(--foreground) mt-[80px] mr-[50px] flex-none">
 				<div class="w-[300px] fixed ">
 					<h1>📁 Blog Directory Structure</h1>
