@@ -45,7 +45,7 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 		</style>
 	</head>
 
-	<body class="h-full w-full flex flex-col">
+	<body class="h-screen w-full flex flex-col">
 		<div class:list={[
 			"w-screen h-[60px]",
 			"fixed",
@@ -63,7 +63,7 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 				<HeaderSearch />
 			</div>
 		</div>
-		<main class="bg-(--panel-main) flex-1 justify-center">
+		<main class="bg-(--panel-main) flex-1 flex-auto justify-center">
 			<!-- <div id="blog-toc" class="w-[300px] text-(--foreground) mt-[80px] mr-[50px] flex-none">
 				<div class="w-[300px] fixed ">
 					<h1>📁 Blog Directory Structure</h1>

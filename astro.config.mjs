@@ -7,6 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
 
 import react from '@astrojs/react';
+import rehypeWrapTables from './src/layouts/rehypeWrapTables';
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,4 +17,7 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
+		markdown: {
+			rehypePlugins: [rehypeWrapTables]
+		}
 });
