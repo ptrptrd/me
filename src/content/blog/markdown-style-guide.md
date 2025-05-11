@@ -69,16 +69,16 @@ The blockquote element represents content that is quoted from another source, op
 ### Syntax
 
 ```markdown
-| Italics   | Bold     | Code   |
+| Italics   | Bold     | Code   | 
 | --------- | -------- | ------ |
 | _italics_ | **bold** | `code` |
 ```
 
 ### Output
 
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
+| Italics   | Bold     | Code   | CodeLongAssCodePleaseOverflow   |
+| --------- | -------- | ------ | ------ |
+| _italics_ | **bold** | `code` | `code` |
 
 ## Code Blocks
 
