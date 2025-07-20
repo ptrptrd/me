@@ -47,7 +47,7 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 
 	<body class="h-screen w-full flex flex-col">
 		<div class:list={[
-			"w-screen h-[60px]",
+			"w-screen h-[80px]",
 			"fixed",
 			"flex flex-col",
 			"items-center",
@@ -87,14 +87,19 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 				</div>
 			</div> -->
 			<article class:list={[
-				"mt-[60px] mx-[15px]",
+				"mt-[80px] mx-[15px]",
 				"text-(--bar-main-foreground)"
 				]} 
 			data-pagefind-body>
 				<!-- <div class="hero-image">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 				</div> -->
-				<div class="prose">
+				<div class="prose" class:list={[
+					"min-w-[720px]",
+					"w-1/2",
+					"max-w-[960px]",
+					"justify-self-center"
+				]}>
 					<div class:list={["title", "mb-[25px]"]}>
 						<p class:list={["text-[30px]"]}>{title}</p>
 						<div class="date">
@@ -108,7 +113,9 @@ const { title, description, pubDate, updatedDate, heroImage, headings } = Astro.
 							}
 						</div>
 					</div>
-					<div id="blog-content">
+					<div id="blog-content" class:list={[
+						
+					]}>
 						<slot />
 					</div>
 				</div>
