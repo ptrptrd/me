@@ -21,6 +21,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for git info
+      - name: Clone docs repo to fill contents
+        uses: actions/checkout@v4
+        with:
+            repository: ptrptrd/docs
+            path: ./content
       - uses: actions/setup-node@v4
         with:
           node-version: 22
