@@ -26,6 +26,10 @@ jobs:
         with:
             repository: ptrptrd/docs
             path: ./content
+      - name: Check folder structure
+        run: ls -la
+      - name: Check folder structure of content folder
+        run: ls -la content
       - uses: actions/setup-node@v4
         with:
           node-version: 22
