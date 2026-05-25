@@ -2,11 +2,18 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug App",
+      "name": "Serve Content",
       "type": "node-terminal",
       "request": "launch",
       "command": "npx quartz build --serve",
       "preLaunchTask": "Clone Docs Repository"
+    },
+    {
+      "name": "Debug Build",
+      "type": "node",
+      "request": "launch",
+      "program": "./quartz/bootstrap-cli.mjs",
+      "args": ["build"]
     }
   ]
 }   
