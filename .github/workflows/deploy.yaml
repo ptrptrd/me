@@ -21,11 +21,11 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0 # Fetch all history for git info
       - name: Clone docs repo to fill contents
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
             repository: ptrptrd/docs
             path: ./content
@@ -33,7 +33,7 @@ jobs:
         run: ls -la
       - name: Check folder structure of content folder
         run: ls -la content
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
       - name: Install Dependencies
@@ -54,4 +54,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
