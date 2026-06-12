@@ -36,7 +36,7 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24
-            - name: Cache dependencies
+      - name: Cache dependencies
         uses: actions/cache@v5
         with:
           path: ~/.npm
@@ -50,7 +50,6 @@ jobs:
           key: ${{ runner.os }}-plugins-${{ hashFiles('quartz.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-plugins-
-
       - run: npm ci
       - name: Install Quartz plugins
         run: npx quartz plugin install
@@ -58,7 +57,7 @@ jobs:
         run: npm run check
       - name: Build Quartz
         run: npx quartz build -d docs -v
-        
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
