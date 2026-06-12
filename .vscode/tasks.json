@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Clone Docs Repository",
+      "type": "shell",
+      "command": "rm -rf ./content && git clone https://github.com/ptrptrd/docs.git ./content",
+      "problemMatcher": []
+    }
+  ]
+}   
