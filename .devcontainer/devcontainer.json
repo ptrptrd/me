@@ -1,4 +1,7 @@
 {
   "name": "Node.js & TypeScript",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:4-24-trixie"
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:4-24-trixie",
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached" // Enable git push and pull from devcontainer
+  ]
 }

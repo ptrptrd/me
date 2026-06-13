@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: ptrptrd.github.io/me/
+  baseUrl: ptrptrd.github.io/me
   ignorePatterns:
     - private
     - templates
@@ -76,7 +76,7 @@ plugins:
   - source: github:quartz-community/crawl-links
     enabled: true
     options:
-      markdownLinkResolution: shortest
+      markdownLinkResolution: absolute
     order: 60
   - source: github:quartz-community/description
     enabled: true
@@ -213,7 +213,7 @@ plugins:
   - source: github:quartz-community/bases-page
     enabled: true
     options:
-      - linkResolution: shortest
+      - linkResolution: absolute
     order: 50
   - source: github:quartz-community/note-properties
     enabled: true
