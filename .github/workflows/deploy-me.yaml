@@ -56,7 +56,7 @@ jobs:
       - name: Check types and style
         run: npm run check
       - name: Build Quartz
-        run: npx quartz build -d docs -v
+        run: npx quartz build -v
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
