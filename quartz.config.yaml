@@ -76,7 +76,7 @@ plugins:
   - source: github:quartz-community/crawl-links
     enabled: true
     options:
-      markdownLinkResolution: absolute
+      markdownLinkResolution: relative
     order: 60
   - source: github:quartz-community/description
     enabled: true
@@ -213,7 +213,7 @@ plugins:
   - source: github:quartz-community/bases-page
     enabled: true
     options:
-      - linkResolution: absolute
+      - linkResolution: relative
     order: 50
   - source: github:quartz-community/note-properties
     enabled: true
